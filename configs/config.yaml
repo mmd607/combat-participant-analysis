@@ -1,0 +1,47 @@
+# UFC Fight Intelligence - central configuration
+# All paths are project-relative; override via environment or code.
+
+paths:
+  data_dir: "dataset"
+  ground_truth: "dataset/ground-truth.json"
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  outputs_dir: "outputs"
+  models_dir: "models"
+  experiments_dir: "experiments"
+
+preprocessing:
+  default_fps: 5          # 1, 3, 5, 10, or "native"
+  target_size: 640        # longest-edge resize for inference
+  cache_frames: false     # extract frames to disk
+  max_frames: null        # optional cap for debugging
+
+detection:
+  model: "yolov8n.pt"      # person detector (COCO class 0)
+  classes: [0]             # person only
+  conf: 0.30
+  iou: 0.50
+  imgsz: 640
+
+pose:
+  model: "yolov8n-pose.pt" # 17 COCO keypoints
+  conf: 0.30
+  iou: 0.50
+  imgsz: 640
+
+tracking:
+  tracker: "botsort.yaml"  # bundled with ultralytics
+  conf: 0.30
+  iou: 0.50
+  track_thresh: 0.50
+  match_thresh: 0.80
+
+analytics:
+  # heuristic thresholds (interpretable baseline, NOT learned)
+  wrist_strike_speed: 0.45      # normalized wrist speed -> strike candidate
+  close_distance: 0.18          # normalized center distance -> clinch/close
+  ground_hip_ratio: 0.35        # hip y near bottom -> ground
+  momentum_half_life: 5.0       # seconds, exponential decay
+
+device: "cuda"   # "cuda" or "cpu"
+seed: 42

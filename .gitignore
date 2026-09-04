@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+.DS_Store
+Thumbs.db
+*~
+
+# Dataset - large video files (store externally, see README for sources)
+dataset/CCTV_DATA/
+dataset/NON_CCTV_DATA/
+
+# Data directories (raw/processed data can be large)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Model weights (download separately, see README)
+models/*
+!models/.gitkeep
+*.pt
+*.pth
+*.onnx
+*.weights
+
+# Generated outputs (logs, visualization videos, plots)
+outputs/*
+!outputs/.gitkeep
+
+# Video files
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+
+# Temporary files
+*.tmp
+*.temp
