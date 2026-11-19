@@ -11,6 +11,12 @@
 
 > An extensible computer vision pipeline for detecting, tracking, and analyzing participants in dynamic combat and multi-person scenes.
 
+> [!IMPORTANT]
+> **Status: design stage.** This repository currently contains the project plan,
+> configuration (`configs/config.yaml`), dependency list and folder layout only.
+> Detection, tracking, dropout, trajectory, pose and analytics code is **not implemented yet**;
+> the features, usage and outputs described below are the planned design, not working functionality.
+
 ---
 
 ## 📌 Overview
